@@ -15,6 +15,8 @@ import {
 import { AiFillLock } from "react-icons/ai";
 import loginBackground from "../../assets/background.png";
 import accessLogo from "../../assets/access-logo.png";
+import {NavLink} from "react-router-dom";
+import { Route } from "react-router-dom";
 
 const Logo = styled("img")({
   maxWidth: "175px",
@@ -36,19 +38,28 @@ const Login = () => {
     >
       <Container sx={{ py: 1, height: "100%" }} maxWidth="xl">
         <Logo src={accessLogo} alt="login background" />
-        <Stack spacing={2} height="fit-content" width="100%" direction="row" sx= {{justifyContent: "space-between"}}>
+        <Stack
+          spacing={2}
+          height="fit-content"
+          width="100%"
+          direction="row"
+          sx={{ justifyContent: "space-between" }}
+        >
           <Box mt={8} sx={{ width: "40%" }}>
             <Typography color="#043486" variant="h3" fontWeight={700}>
               Clearing Solution
             </Typography>
             <Typography color="#043486">
-              Powered by Instiq Co-operation 2022.
+              Powered by InstiQ Co-operation 2022.
             </Typography>
           </Box>
-          <Box width="fit-content" height={"fit-content"} sx={{ width: "50%", justifyContent: "start" }}>
+          <Box
+            width="fit-content"
+            height={"fit-content"}
+            sx={{ width: "50%", justifyContent: "start" }}
+          >
             <Paper
               sx={{
-                
                 width: "60%",
                 height: "60vh",
                 py: 4,
@@ -75,20 +86,20 @@ const Login = () => {
 
                 <Stack component="form">
                   <TextField
-                    label="Email/Username"
+                    label="Email/Staff ID"
                     name="userName"
                     type="text"
-                    sx={{ m: 0 }}
-                    labelProps={{
-                      fontSize: 14
+                    sx={{ m: 3 }}
+                    labelprops={{
+                      fontSize: 14,
                     }}
                   />
 
                   <TextField
                     label="Password"
                     name="password"
-                    type={'password'}
-                    sx={{ m: 0 }}
+                    type={"password"}
+                    sx={{ m: 3 }}
                     InputProps={{
                       endAdornment: (
                         <InputAdornment position="end">
@@ -101,29 +112,38 @@ const Login = () => {
                             <AiFillLock />
                           </IconButton>
                         </InputAdornment>
-                      )
+                      ),
                     }}
                     labelProps={{
-                      fontSize: 14
+                      fontSize: 14,
                     }}
                   />
 
                   <Link
-                    underline="hover"
+                    // underline="hover"
                     color="primary"
                     fontSize={13}
                     // component={RouterLink}
                     to="/login"
                     mb={4}
+                    ml={3}
+                    mt={-3}
+                    // sx= {{border: "1px solid blue"}}
                   >
                     Forgot Password ?
                   </Link>
-
-                  <Button variant="contained" type="submit" color="secondary" size="large" mt={2}>
-                    Login
-                  </Button>
+                  <NavLink to='/home'>
+                    <Button
+                      variant="contained"
+                      type="submit"
+                      color="secondary"
+                      size="large"
+                      sx={{width: "100%", marginTop:"2"}}
+                    >
+                      Login
+                    </Button>
+                  </NavLink>
                 </Stack>
-
               </Stack>
             </Paper>
           </Box>
