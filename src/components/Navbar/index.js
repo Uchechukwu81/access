@@ -13,16 +13,12 @@ import { BiLogOut } from "react-icons/bi";
 import BadgeIcon from "@mui/icons-material/Badge";
 import HomeIcon from "@mui/icons-material/Home";
 import AccountCircle from "@mui/icons-material/AccountCircle";
-import { Link, useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+// import SearchField from "../SearchField";
 
 // import SearchField from '../SearchFIeld';
 
 const Navbar = ({ swipeable }) => {
-  //   const { toggleSidebar } = useNavToggle();
-  //   const { signOut } = useAuth();
-  const navigate = useNavigate();
-
   return (
     <Box>
       <Stack direction="row" justifyContent="flex-end" mb={0.5}></Stack>
@@ -30,9 +26,11 @@ const Navbar = ({ swipeable }) => {
         position="scrollable"
         sx={{
           zIndex: (theme) => theme.zIndex.drawer - 1,
-          bgcolor: "#FFFFFF",
+          bgcolor: "#0846AF",
           borderRadius: 1,
-          marginTop: "50px"
+          marginTop: "50px",
+          marginBottom: "15px",
+          height: "50px",
         }}
       >
         {/* <Toolbar
@@ -45,77 +43,72 @@ const Navbar = ({ swipeable }) => {
 
           }}
         > */}
-          <Box sx={{ display: "flex", width: "100%" }}>
-            {swipeable && (
-              <IconButton
-                // onClick={toggleSidebar}
-                size={"small"}
-                edge="start"
-                color="inherit"
-                aria-label="menu"
-              >
-                {/* <GiHamburgerMenu /> */}
-              </IconButton>
-            )}
-            <Stack
-              direction="row"
-              alignItems="center"
-              flexGrow={1}
-              spacing={3}
+        <Box sx={{ display: "flex", width: "100%", height: "50px", color: "white" }}>
+          {swipeable && (
+            <IconButton
+              // onClick={toggleSidebar}
+              size={"small"}
+              edge="start"
+              color="inherit"
+              aria-label="menu"
             >
+              {/* <GiHamburgerMenu /> */}
+            </IconButton>
+          )}
+          <Stack direction="row" alignItems="center" flexGrow={1} spacing={3}>
+            <NavLink to="/home">
               <Button
                 startIcon={<HomeIcon color="secondary" />}
                 color="secondary"
-                sx={{ fontSize: "1rem", color: "#033486" }}
-                component={Link}
-                to="/"
+                sx={{ fontSize: "1rem", color: "#FAF9FB" }}
               >
                 Home
               </Button>
+            </NavLink>
 
-              <Box sx={{ display: "flex", alignItems: "center" }}>
-                <AccountCircle color="secondary" />
-                <Typography
-                  color="#033486"
-                  fontSize="1rem"
-                  fontWeight={500}
-                  ml={0.5}
-                >
-                  Current User:
-                </Typography>
-                <Typography color="#033486" fontSize="0.85rem" ml={0.5}>
-                  Abdul Jelili Shekoni
-                </Typography>
-              </Box>
+            <Box sx={{ display: "flex", alignItems: "center" }}>
+              <AccountCircle color="secondary" />
+              <Typography
+                color="#FAF9FB"
+                fontSize="1rem"
+                fontWeight={500}
+                ml={0.5}
+              >
+                Current User:
+              </Typography>
+              <Typography color="#FAF9FB" fontSize="0.85rem" ml={0.5}>
+                Abdul Jelili Shekoni
+              </Typography>
+            </Box>
 
-              <Box sx={{ display: "flex", alignItems: "center" }}>
-                <BadgeIcon color="secondary" />
-                <Typography
-                  color="#033486"
-                  fontSize="1rem"
-                  fontWeight={500}
-                  ml={0.5}
-                >
-                  Staff ID:
-                </Typography>
-                <Typography color="#033486" fontSize="0.85rem" ml={0.5}>
-                  ACSBNK029
-                </Typography>
-              </Box>
-            </Stack>
+            <Box sx={{ display: "flex", alignItems: "center" }}>
+              <BadgeIcon color="secondary" />
+              <Typography
+                color="#FAF9FB"
+                fontSize="1rem"
+                fontWeight={500}
+                ml={0.5}
+              >
+                Staff ID:
+              </Typography>
+              <Typography color="#FAF9FB" fontSize="0.85rem" ml={0.5}>
+                ACSBNK029
+              </Typography>
+            </Box>
+          </Stack>
 
-            {/* <SearchField /> */}
-            {/* <NavLink to="/"> */}
-            <Button
-              startIcon={<SvgIcon color="secondary" component={BiLogOut} />}
-              color="darkPrimary"
-              sx={{ fontSize: "1rem" }}
-              onClick={() => navigate("/")}
-            >
-              <Typography color={"#033486"}>Logout</Typography>
-            </Button>
-            {/* </NavLink> */}
-          </Box>
+          {/* <SearchField /> */}
+          {/* <NavLink to="/"> */}
+          <Button
+            startIcon={<SvgIcon color="secondary" component={BiLogOut} />}
+            color="darkPrimary"
+            sx={{ fontSize: "1rem" }}
+            // onClick={() => navigate("/")}
+          >
+            <Typography color={"#FAF9FB"}>Logout</Typography>
+          </Button>
+          {/* </NavLink> */}
+        </Box>
         {/* </Toolbar> */}
       </AppBar>
     </Box>

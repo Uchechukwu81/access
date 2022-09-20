@@ -15,7 +15,7 @@ import {
 import { AiFillLock } from "react-icons/ai";
 import loginBackground from "../../assets/background.png";
 import accessLogo from "../../assets/access-logo.png";
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Route } from "react-router-dom";
 
 const Logo = styled("img")({
@@ -70,15 +70,15 @@ const Login = () => {
               elevation={10}
             >
               <Stack spacing={1}>
-                <Typography
-                  fontSize={20}
-                  color="primary"
-                  align="center"
-                  fontWeight={600}
-                  mb={1}
-                >
-                  LOGIN
-                </Typography>
+                  <Typography
+                    fontSize={20}
+                    color="primary"
+                    align="center"
+                    fontWeight={600}
+                    mb={1}
+                  >
+                    LOGIN
+                  </Typography>
 
                 <Typography fontSize={16} align="center">
                   Please enter your login details below.
@@ -132,13 +132,13 @@ const Login = () => {
                   >
                     Forgot Password ?
                   </Link>
-                  <NavLink to='/home'>
+                  <NavLink to="/home">
                     <Button
                       variant="contained"
                       type="submit"
                       color="secondary"
                       size="large"
-                      sx={{width: "100%", marginTop:"2"}}
+                      sx={{ width: "100%", marginTop: "2" }}
                     >
                       Login
                     </Button>

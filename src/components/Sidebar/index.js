@@ -84,7 +84,6 @@ export default function ScrollableDrawerLeft() {
           <ListItemButton
             sx={{
               color: "white",
-              fontSize: "1em",
               fontWeight: "light",
               fontSize: "1rem",
               "&:hover": {
@@ -104,7 +103,7 @@ export default function ScrollableDrawerLeft() {
           </ListItemButton>
           <Collapse in={!customerOpen} timeout="auto" unmountOnExit>
             <List sx={{ color: "white" }}>
-              <Link href="/customerfundtransfer/singleentry">
+              <Link href="/singleEntryPage">
                 <ListItemButton>
                   <ListItemIcon sx={{ color: "#fff" }}>
                     <BsDot size={30} />
@@ -112,6 +111,7 @@ export default function ScrollableDrawerLeft() {
                   <ListItemText primary="Entry Posting" />
                 </ListItemButton>
               </Link>
+              <Link href= "/masterList">
               <ListItemButton>
                 <ListItemIcon sx={{ color: "#fff" }}>
                   {" "}
@@ -119,6 +119,7 @@ export default function ScrollableDrawerLeft() {
                 </ListItemIcon>
                 <ListItemText primary="Master List" />
               </ListItemButton>
+              </Link>
             </List>
           </Collapse>
         </List>
