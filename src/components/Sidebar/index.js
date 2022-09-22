@@ -24,7 +24,7 @@ const Logo = styled("img")({
   maxWidth: "175px",
   alignSelf: "center",
   cursor: "pointer",
-  marginTop: "30px"
+  marginTop: "30px",
   // height: '37px'
 });
 
@@ -71,6 +71,7 @@ export default function ScrollableDrawerLeft() {
             borderBottomRightRadius: 30,
             bgcolor: "#01175C",
             padding: "0rem 2rem",
+            color: "#FAF9FB",
           },
         }}
         variant="permanent"
@@ -80,7 +81,7 @@ export default function ScrollableDrawerLeft() {
 
         <Toolbar />
         {/* <Divider /> */}
-        <List>
+        <List sx={{ color: "#FAF9FB" }}>
           <ListItemButton
             sx={{
               color: "white",
@@ -88,7 +89,7 @@ export default function ScrollableDrawerLeft() {
               fontSize: "1rem",
               "&:hover": {
                 background: "#FF8102",
-                color: "#fff",
+                color: "#FAF9FB",
                 borderRadius: "20px",
               },
             }}
@@ -104,21 +105,21 @@ export default function ScrollableDrawerLeft() {
           <Collapse in={!customerOpen} timeout="auto" unmountOnExit>
             <List sx={{ color: "white" }}>
               <Link href="/singleEntryPage">
-                <ListItemButton>
+                <ListItemButton sx={{ color: "white" }}>
                   <ListItemIcon sx={{ color: "#fff" }}>
                     <BsDot size={30} />
                   </ListItemIcon>
                   <ListItemText primary="Entry Posting" />
                 </ListItemButton>
               </Link>
-              <Link href= "/masterList">
-              <ListItemButton>
-                <ListItemIcon sx={{ color: "#fff" }}>
-                  {" "}
-                  <BsDot size={30} />
-                </ListItemIcon>
-                <ListItemText primary="Master List" />
-              </ListItemButton>
+              <Link href="/masterList">
+                <ListItemButton sx={{ color: "white" }}>
+                  <ListItemIcon sx={{ color: "#fff" }}>
+                    {" "}
+                    <BsDot size={30} />
+                  </ListItemIcon>
+                  <ListItemText primary="Master List" />
+                </ListItemButton>
               </Link>
             </List>
           </Collapse>
@@ -128,7 +129,7 @@ export default function ScrollableDrawerLeft() {
           <ListItemButton
             sx={{
               color: "white",
-              fontSize: "1rem",
+              // fontSize: "1rem",
               fontWeight: "light",
               fontSize: "15px",
               "&:hover": {
@@ -165,27 +166,33 @@ export default function ScrollableDrawerLeft() {
           </ListItemButton>
           <Collapse in={!achOutwardOpen} timeout="auto" unmountOnExit>
             <List sx={{ color: "white" }}>
-              <ListItemButton>
-                <ListItemIcon sx={{ color: "#fff" }}>
-                  {" "}
-                  <BsDot size={30} />
-                </ListItemIcon>
-                <ListItemText primary="ACH Outward Master List" />
-              </ListItemButton>
-              <ListItemButton>
-                <ListItemIcon sx={{ color: "#fff" }}>
-                  {" "}
-                  <BsDot size={30} />
-                </ListItemIcon>
-                <ListItemText primary="Single ACH Entries" />
-              </ListItemButton>
-              <ListItemButton>
-                <ListItemIcon sx={{ color: "#fff" }}>
-                  {" "}
-                  <BsDot size={30} />
-                </ListItemIcon>
-                <ListItemText primary="Outward Multiple Upload" />
-              </ListItemButton>
+              <Link href="/masterList">
+                <ListItemButton sx={{ color: "white" }}>
+                  <ListItemIcon sx={{ color: "#fff" }}>
+                    {" "}
+                    <BsDot size={30} />
+                  </ListItemIcon>
+                  <ListItemText primary="ACH Outward Master List" />
+                </ListItemButton>
+              </Link>
+              <Link href="/singleAchEntries">
+                <ListItemButton sx={{ color: "white" }}>
+                  <ListItemIcon sx={{ color: "#fff" }}>
+                    {" "}
+                    <BsDot size={30} />
+                  </ListItemIcon>
+                  <ListItemText primary="Single ACH Entries" />
+                </ListItemButton>
+              </Link>
+              <Link href="/outwardMultipleUpload">
+                <ListItemButton sx={{ color: "white" }}>
+                  <ListItemIcon sx={{ color: "#fff" }}>
+                    {" "}
+                    <BsDot size={30} />
+                  </ListItemIcon>
+                  <ListItemText primary="Outward Multiple Upload" />
+                </ListItemButton>
+              </Link>
             </List>
           </Collapse>
         </List>
@@ -230,21 +237,23 @@ export default function ScrollableDrawerLeft() {
           </ListItemButton>
           <Collapse in={!achInwardOpen} timeout="auto" unmountOnExit>
             <List sx={{ color: "white" }}>
-              <ListItemButton>
-                <ListItemIcon sx={{ color: "#fff" }}>
-                  {" "}
-                  <BsDot size={30} />
-                </ListItemIcon>
-                <ListItemText primary="ACH Inward Master List" />
-              </ListItemButton>
-              <ListItemButton>
+              <Link href="/inwardMasterList">
+                <ListItemButton sx={{ color: "white" }}>
+                  <ListItemIcon sx={{ color: "#fff" }}>
+                    {" "}
+                    <BsDot size={30} />
+                  </ListItemIcon>
+                  <ListItemText primary="ACH Inward Master List" />
+                </ListItemButton>
+              </Link>
+              <ListItemButton sx={{ color: "white" }}>
                 <ListItemIcon sx={{ color: "#fff" }}>
                   {" "}
                   <BsDot size={30} />
                 </ListItemIcon>
                 <ListItemText primary="Single ACH Entries" />
               </ListItemButton>
-              <ListItemButton>
+              <ListItemButton sx={{ color: "white" }}>
                 <ListItemIcon sx={{ color: "#fff" }}>
                   {" "}
                   <BsDot size={30} />
@@ -295,21 +304,21 @@ export default function ScrollableDrawerLeft() {
           </ListItemButton>
           <Collapse in={!managementOpen} timeout="auto" unmountOnExit>
             <List sx={{ color: "white" }}>
-              <ListItemButton>
+              <ListItemButton sx={{ color: "white" }}>
                 <ListItemIcon sx={{ color: "#fff" }}>
                   {" "}
                   <BsDot size={30} />
                 </ListItemIcon>
                 <ListItemText primary="Reports" />
               </ListItemButton>
-              <ListItemButton>
+              <ListItemButton sx={{ color: "white" }}>
                 <ListItemIcon sx={{ color: "#fff" }}>
                   {" "}
                   <BsDot size={30} />
                 </ListItemIcon>
                 <ListItemText primary="User Management" />
               </ListItemButton>
-              <ListItemButton>
+              <ListItemButton sx={{ color: "white" }}>
                 <ListItemIcon sx={{ color: "#fff" }}>
                   {" "}
                   <BsDot size={30} />

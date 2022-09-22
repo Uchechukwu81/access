@@ -6,6 +6,9 @@ import { CssBaseline } from "@mui/material";
 import SingleEntryPage from "./pages/SingleEntryPage/SingleEntryPage";
 import MultipleEntriesPage from "./pages/MultipleEntriesPage/MultipleEntriesPage";
 import MasterList from "./pages/MasterList/MasterList";
+import SingleAchEntries from "./pages/SingleAchEntries/SingleAchEntries";
+import OutwardMultipleUpload from "./pages/OutwardMultipleUpload/OutwardMultipleUpload";
+import InwardMasterList from "./pages/InwardMasterList/InwardMasterList";
 
 function App() {
   return (
@@ -18,6 +21,9 @@ function App() {
           <Route path="/singleEntryPage" element={<SingleEntryPage />}></Route>
           <Route path="/multipleEntriesPage" element={<MultipleEntriesPage />}></Route>
           <Route path="/masterList" element={<MasterList />}></Route>
+          <Route path="/singleAchEntries" element={<SingleAchEntries />}></Route>
+          <Route path="/outwardMultipleUpload" element={<OutwardMultipleUpload />}></Route>
+          <Route path="/inwardMasterList" element={<InwardMasterList />}></Route>
 
         </Routes>
       </Router>

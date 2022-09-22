@@ -432,7 +432,7 @@ const columns = [
   },
 ];
 
-const MasterList = () => {
+const InwardMasterList = () => {
   return (
     <ViewPort>
       <Grid
@@ -440,7 +440,7 @@ const MasterList = () => {
         spacing={1}
         sx={{ paddingLeft: "40px", color: "#01175C", fontSize: "12px" }}
       >
-        <h4>Master List</h4>
+        <h4>Bulk Master List</h4>
       </Grid>
       <Grid container spacing={1} sx={{ padding: "1.5rem", marginTop: "40px" }}>
         <Grid item xs={12} sm={12} md={12}>
@@ -451,4 +451,4 @@ const MasterList = () => {
   );
 };
 
-export default MasterList;
+export default InwardMasterList;
