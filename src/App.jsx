@@ -9,6 +9,7 @@ import MasterList from "./pages/MasterList/MasterList";
 import SingleAchEntries from "./pages/SingleAchEntries/SingleAchEntries";
 import OutwardMultipleUpload from "./pages/OutwardMultipleUpload/OutwardMultipleUpload";
 import InwardMasterList from "./pages/InwardMasterList/InwardMasterList";
+import TestPage from "./pages/TestPage/TestPage";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/singleAchEntries" element={<SingleAchEntries />}></Route>
           <Route path="/outwardMultipleUpload" element={<OutwardMultipleUpload />}></Route>
           <Route path="/inwardMasterList" element={<InwardMasterList />}></Route>
+          <Route path="/testPage" element={<TestPage />}></Route>
 
         </Routes>
       </Router>

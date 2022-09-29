@@ -98,7 +98,7 @@ const Navbar = ({ swipeable }) => {
           </Stack>
 
           {/* <SearchField /> */}
-          {/* <NavLink to="/"> */}
+          <NavLink to="/">
           <Button
             startIcon={<SvgIcon color="secondary" component={BiLogOut} />}
             color="darkPrimary"
@@ -107,7 +107,7 @@ const Navbar = ({ swipeable }) => {
           >
             <Typography color={"#FAF9FB"}>Logout</Typography>
           </Button>
-          {/* </NavLink> */}
+          </NavLink>
         </Box>
         {/* </Toolbar> */}
       </AppBar>

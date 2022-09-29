@@ -1,4 +1,4 @@
-// import { useState } from 'react';
+import { useState, useEffect } from "react";
 import {
   Container,
   Box,
@@ -16,7 +16,7 @@ import { AiFillLock } from "react-icons/ai";
 import loginBackground from "../../assets/background.png";
 import accessLogo from "../../assets/access-logo.png";
 import { NavLink } from "react-router-dom";
-import { Route } from "react-router-dom";
+// import { Route } from "react-router-dom";
 
 const Logo = styled("img")({
   maxWidth: "175px",
@@ -24,6 +24,30 @@ const Logo = styled("img")({
 });
 
 const Login = () => {
+  // const [body, setBody] = useState([]);
+
+  // const fetchPost = () => {
+  //   fetch("https://jsonplaceholder.typicode.com/comments")
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         throw Error(response.statusText);
+  //       }
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       console.log(data);
+  //       setBody(data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err.message);
+  //     });
+  // };
+
+  // useEffect(() => {
+  //   fetchPost();
+  // }, [])
+
+  // console.log(body, "This is body response....");
   return (
     <Box
       width="100vw"
@@ -52,6 +76,12 @@ const Login = () => {
             <Typography color="#043486">
               Powered by InstiQ Co-operation 2022.
             </Typography>
+
+            {/* {body.map((item, index) => (
+              <Box key={index}>
+              <Typography sx={{borderBottom:"solid 1px red"}}>{item.id}</Typography>
+              </Box>
+            ))} */}
           </Box>
           <Box
             width="fit-content"
@@ -61,7 +91,7 @@ const Login = () => {
             <Paper
               sx={{
                 width: "60%",
-                height: "60vh",
+                height: "65vh",
                 py: 4,
                 px: 4,
                 mt: 8,
@@ -70,15 +100,15 @@ const Login = () => {
               elevation={10}
             >
               <Stack spacing={1}>
-                  <Typography
-                    fontSize={20}
-                    color="primary"
-                    align="center"
-                    fontWeight={600}
-                    mb={1}
-                  >
-                    LOGIN
-                  </Typography>
+                <Typography
+                  fontSize={20}
+                  color="primary"
+                  align="center"
+                  fontWeight={600}
+                  mb={1}
+                >
+                  LOGIN
+                </Typography>
 
                 <Typography fontSize={16} align="center">
                   Please enter your login details below.
@@ -138,7 +168,7 @@ const Login = () => {
                       type="submit"
                       color="secondary"
                       size="large"
-                      sx={{ width: "100%", marginTop: "2" }}
+                      sx={{ width: "100%" }}
                     >
                       Login
                     </Button>
