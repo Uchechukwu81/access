@@ -6,12 +6,15 @@ import App from "./App";
 import ThemeProvider from "@mui/system/ThemeProvider";
 import { theme } from "./helpers/theme";
 import { BrowserRouter as Router } from "react-router-dom";
+import { AuthProvider } from "./context/AuthProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <App />
+      <AuthProvider>
+        <App />
+      </AuthProvider>
     </ThemeProvider>
   </React.StrictMode>
 );

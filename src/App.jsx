@@ -10,6 +10,8 @@ import SingleAchEntries from "./pages/SingleAchEntries/SingleAchEntries";
 import OutwardMultipleUpload from "./pages/OutwardMultipleUpload/OutwardMultipleUpload";
 import InwardMasterList from "./pages/InwardMasterList/InwardMasterList";
 import TestPage from "./pages/TestPage/TestPage";
+import LoginDemo from "./pages/LoginDemo/LoginDemo";
+import Table from "./pages/Table/Table";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
           <Route path="/outwardMultipleUpload" element={<OutwardMultipleUpload />}></Route>
           <Route path="/inwardMasterList" element={<InwardMasterList />}></Route>
           <Route path="/testPage" element={<TestPage />}></Route>
+          <Route path="/loginDemo" element={<LoginDemo />}></Route>
+          <Route path="/table" element={<Table />}></Route>
 
         </Routes>
       </Router>
