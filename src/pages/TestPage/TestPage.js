@@ -1,5 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
+import Table from "react-bootstrap/Table";
+
 // import { useNavigate } from "react-router-dom";
+import Axios from "axios";
 import {
   Grid,
   TextField,
@@ -13,6 +16,7 @@ import {
 // import axios from "axios";
 
 const TestPage = () => {
+  const [listOfUsers, setListOfUsers] = useState([]);
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -20,25 +24,40 @@ const TestPage = () => {
   // const history = useHistory();
   // const navigate = useNavigate();
   useEffect(() => {
-    if (localStorage.getItem("user-info")) {
-      // navigate("/add");
-    }
-  }, []);
-  async function register() {
-    let item = { name, username, email, phone };
-    console.warn(item);
-    let result = await fetch("https://jsonplaceholder.typicode.com/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-        Accept: "application/x-www-form-urlencoded",
-      },
-      body: JSON.stringify(item),
+    Axios.get("http://localhost:5000/getRegister").then((response) => {
+      setListOfUsers(response.data);
     });
-    result = await result.json();
-    localStorage.setItem("user-info", JSON.stringify(result));
-    // navigate("/add");
-  }
+    // if (localStorage.getItem("user-info")) {
+    //   // navigate("/add");
+    // }
+  }, []);
+
+  const createUser = () => {
+    Axios.post("http://localhost:5000/createRegister", {
+      name,
+      username,
+      email,
+      phone,
+    }).then((response) => {
+      setListOfUsers([...listOfUsers, { name, username, email, phone }]);
+      alert("User Created");
+    });
+  };
+  // async function register() {
+  //   let item = { name, username, email, phone };
+  //   console.warn(item);
+  //   let result = await fetch("https://jsonplaceholder.typicode.com/users", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/x-www-form-urlencoded",
+  //       Accept: "application/x-www-form-urlencoded",
+  //     },
+  //     body: JSON.stringify(item),
+  //   });
+  //   result = await result.json();
+  //   localStorage.setItem("user-info", JSON.stringify(result));
+  //   // navigate("/add");
+  // }
   // const [data, setData] = useState({
   //   name: "",
   //   username: "",
@@ -100,6 +119,36 @@ const TestPage = () => {
   // console.log(users, "users are here");
 
   return (
+    <div className="App">
+    <div className="usersDisplay">
+      {listOfUsers.map((user) => {
+        return (
+          <div>
+            <Table striped bordered>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Username</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{user.name}</td>
+                  <td>{user.username}</td>
+                  <td>{user.email}</td>
+                  <td>{user.phone}</td>
+                </tr>
+              </tbody>
+            </Table>
+            {/* <h1>Name: {user.name}</h1>
+            <h1>Age: {user.age}</h1>
+            <h1>Username: {user.username}</h1> */}
+          </div>
+        );
+      })}
+    </div>
     <Card
       sx={{
         width: "30vw",
@@ -190,7 +239,7 @@ const TestPage = () => {
       </CardContent>
       <CardActions>
         <Button
-          onClick={register}
+          onClick={createUser}
           size="small"
           sx={{
             border: "1px solid black",
@@ -209,6 +258,7 @@ const TestPage = () => {
         </Button>
       </CardActions>
     </Card>
+    </div>
   );
 };
 
